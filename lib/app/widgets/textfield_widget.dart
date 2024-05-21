@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../core/colors.dart';
+
 class TextFieldWidget extends StatelessWidget {
   const TextFieldWidget({
     super.key,
@@ -36,21 +38,21 @@ class TextFieldWidget extends StatelessWidget {
             style: const TextStyle(fontSize: 15),
             autocorrect: false,
             textCapitalization: TextCapitalization.none,
-            decoration: InputDecoration(
-              contentPadding: const EdgeInsets.symmetric(
+            decoration: const InputDecoration(
+              contentPadding: EdgeInsets.symmetric(
                   vertical: 0, horizontal: 10),
-              fillColor: Colors.grey.shade600,
+              fillColor: AppColors.primary,
               filled: false,
-              enabledBorder: const OutlineInputBorder(
+              enabledBorder: OutlineInputBorder(
                 borderSide: BorderSide(
                   width: 2,
-                  color: Colors.grey,
+                  color: AppColors.primary,
                 ),
               ),
               focusedBorder: OutlineInputBorder(
                 borderSide: BorderSide(
                   width: 2,
-                  color: Colors.grey.shade500,
+                  color: AppColors.primary,
                 ),
               ),
             ),
