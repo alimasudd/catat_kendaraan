@@ -52,3 +52,4 @@ firebase.json
 /android/app/google-services.json
 /android/key.properties
 /android/app/app-release.jks
+/web/index.html
