@@ -22,8 +22,12 @@ class $AssetsImagesGen {
   /// File path: assets/images/google.png
   AssetGenImage get google => const AssetGenImage('assets/images/google.png');
 
+  /// File path: assets/images/no-video.png
+  AssetGenImage get noVideo =>
+      const AssetGenImage('assets/images/no-video.png');
+
   /// List of all assets
-  List<AssetGenImage> get values => [apple, facebook, google];
+  List<AssetGenImage> get values => [apple, facebook, google, noVideo];
 }
 
 class Assets {
