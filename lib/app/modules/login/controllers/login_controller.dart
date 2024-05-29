@@ -24,7 +24,7 @@ class LoginController extends GetxController {
 
         if (credential.user != null){
           if(credential.user!.emailVerified == true){
-            Get.offAllNamed(Routes.HOME);
+            Get.offAllNamed(Routes.MENU);
           }else{
             AlertDialogInfo.showAlertDialog(Get.context as BuildContext, true, 'Verifikasi', 'Email anda belum terverifikasi, silahkan verifikasi email anda', 'Saya Mengerti', () {
               Get.back();
