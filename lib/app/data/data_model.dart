@@ -27,6 +27,18 @@ class DataModel {
     views: json["views"] ?? 0,
   );
 
+  factory DataModel.fromDocument(DocumentSnapshot doc) {
+    final data = doc.data() as Map<String, dynamic>;
+    return DataModel(
+      id: doc.id,
+      location: data["location"],
+      urlYoutube: data["url_youtube"] ?? "",
+      platNumber: data["plat_number"],
+      date: DateFormat("dd MMMM yyyy").format(DateTime.parse(data["date"])),
+      views: data["views"] ?? 0,
+    );
+  }
+
   Map<String, dynamic> toJson() => {
     "id": id,
     "location": location,
