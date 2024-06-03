@@ -55,4 +55,34 @@ class AddDataController extends GetxController {
     }
   }
 
+  void createData() async{
+    // final data = DataModel(
+    //     date: TFDate.text,
+    //     location: TFLocation.text,
+    //     urlYoutube: TFUrl.text,
+    //     platNumber: TFPlat.text,
+    //     views: 0);
+    // addData(data);
+
+    try{
+      final userId = FirebaseAuth.instance.currentUser!.uid;
+      final docRecords = FirebaseFirestore.instance.collection('data').doc();
+      await docRecords.set({
+        "id" : docRecords.id,
+        "user_id" : userId,
+        "date" : TFDate.text,
+        "location" : TFLocation.text,
+        "url_youtube" : TFUrl.text,
+        "plat_number" : TFPlat.text,
+        "views" : 0,
+        "created_at" : DateTime.now().toIso8601String(),
+      });
+
+
+      Get.back();
+    } on FirebaseException catch (e){
+      debugPrint('FirebaseError $e');
+    }
+  }
+
 }
