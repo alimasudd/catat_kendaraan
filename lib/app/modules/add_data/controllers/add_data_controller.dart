@@ -41,5 +41,18 @@ class AddDataController extends GetxController {
     }
   }
 
+  Future addData (DataModel data) async {
+    if(TFUrl.text.isNotEmpty && TFDate.text.isNotEmpty && TFPlat.text.isNotEmpty && TFLocation.text.isNotEmpty ){
+      // final docRecords = FirebaseFirestore.instance.collection('data').doc();
+      //
+      // data.id = docRecords.id;
+      // final json = data.toJson();
+      // await docRecords.set(json);
+      createData();
+    }else{
+      Get.snackbar('Terjadi Kesalahan', 'Masih ada kolom yang kosong',
+          backgroundColor: AppColors.primary, colorText: AppColors.white, snackPosition: SnackPosition.BOTTOM);
+    }
+  }
 
 }
